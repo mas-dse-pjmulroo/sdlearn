@@ -1,4 +1,4 @@
-class Stacking():
+class Stacking:
     """Stacking method.
 
     Implementation of simple stacking method. Desgined to
@@ -18,7 +18,8 @@ class Stacking():
                     ...],
                    [linear_model.LinearRegressor()]]
     """
-    def __init__(self, classifiers=None, prune=self._prune):
+    def __init__(self, classifiers=None, prune=None):
+        if prune == None: prune = self._prune
         self.classifiers = classifiers
         self.prune = prune
         self.cutoff_ = 0.2
